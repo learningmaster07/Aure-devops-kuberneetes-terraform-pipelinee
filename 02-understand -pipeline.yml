@@ -15,8 +15,6 @@ stages:
     - job: FirstJob
       steps:
       - bash: echo Build FirstJob
-    - job: SecondJob
-      steps:
       - bash: echo Build SecondJob 
       - bash: echo $(Pipelinelevelvariable)
       - bash: echo $(Build.BuildNumber)
@@ -26,6 +24,17 @@ stages:
       - bash: echo $(System.DefaultWorkingDirectory)
       - bash: ls -R $(System.DefaultWorkingDirectory)
       - bash: echo $(Build.ArtifactStagingDirectory)
+    # - job: SecondJob
+    #   steps:
+    #   - bash: echo Build SecondJob 
+    #   - bash: echo $(Pipelinelevelvariable)
+    #   - bash: echo $(Build.BuildNumber)
+    #   - bash: echo $(Build.BuldId)
+    #   - bash: echo $(Build.SourceBranchName)
+    #   - bash: echo $(Build.SourceDirectory)
+    #   - bash: echo $(System.DefaultWorkingDirectory)
+    #   - bash: ls -R $(System.DefaultWorkingDirectory)
+    #   - bash: echo $(Build.ArtifactStagingDirectory)
 # - stage: DevDeploy
 #   variables:
 #    environment: Dev
